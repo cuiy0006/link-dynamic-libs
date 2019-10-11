@@ -5,5 +5,5 @@ gcc -fPIC -shared -o lib/libmax.so max.c
 #-shared 是链接选项，告诉gcc生成动态库而不是可执行文件。
 #为了让用户知道我们的动态库中有哪些接口可用，我们需要编写对应的头文件，比如可以写一个 max.h
 
-gcc test.c -L./lib -lmax -Wl,-rpath=./lib
+gcc test.c -I./header -L./lib -lmax -Wl,-rpath=./lib
 
